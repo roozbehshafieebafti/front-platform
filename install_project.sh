@@ -32,9 +32,11 @@ failFunction $? "dependencies tests was successfull" "tests fail"
 failFunction $? "files tests was successfull" "tests fail"
 
 # install typescript
-# ./module/install_project/typescript.sh $PROJECT_NAME
-# failFunction $? "successfully install react typescript" "fail to install react typescript"
-# #create directories
-# ./module/install_project/directories.sh $PROJECT_NAME
-
+./module/install_project/typescript.sh $PROJECT_NAME
+failFunction $? "successfully install react typescript" "fail to install react typescript"
+# create directories
+./module/install_project/directories.sh $PROJECT_NAME
+failFunction $? "successfully create directories" "fail to create directories"
+# create files
 ./module/install_project/files.sh "$DIRCTORY" "$PROJECT_NAME"
+failFunction $? "successfully create files" "fail to create files"
