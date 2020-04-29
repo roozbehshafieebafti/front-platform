@@ -24,8 +24,11 @@ APIS_FILE_TEST="$MAIN_DIRECTORY/module/install_project/dependencies/apis/fetch.t
 cat "$APIS_FILE">"$MAIN_DIRECTORY/$PROJECT_NAME/src/apis/fetch.ts"
 failFunction $? "fetch.ts created" "fetch.ts can not creat"
 # create __tests__ dir
-mkdir "$MAIN_DIRECTORY/$PROJECT_NAME/src/apis/__tests__"
-failFunction $? "__tests__ dir created" "__tests_ dir can not creat"
+if [ ! -d "$MAIN_DIRECTORY/$PROJECT_NAME/src/apis/__tests__" ]
+then
+    mkdir "$MAIN_DIRECTORY/$PROJECT_NAME/src/apis/__tests__"
+    failFunction $? "__tests__ dir created" "__tests_ dir can not creat"
+fi
 # create fetch.test.ts
 cat "$APIS_FILE_TEST">"$MAIN_DIRECTORY/$PROJECT_NAME/src/apis/__tests__/fetch.test.ts"
 failFunction $? "fetch.test.ts created" "fetch.test.ts can not creat"
