@@ -28,11 +28,13 @@ DIRCTORY=`pwd`
 failFunction $? "existance tests was successfull" "tests fail"
 ./tests/install_project/dependencies.sh "$DIRCTORY"
 failFunction $? "dependencies tests was successfull" "tests fail"
-
+./tests/install_project/files.sh "$DIRCTORY"
+failFunction $? "files tests was successfull" "tests fail"
 
 # install typescript
-./module/install_project/typescript.sh $PROJECT_NAME
-failFunction $? "successfully install react typescript" "fail to install react typescript"
-#create directories
-./module/install_project/directories.sh $PROJECT_NAME
-    
+# ./module/install_project/typescript.sh $PROJECT_NAME
+# failFunction $? "successfully install react typescript" "fail to install react typescript"
+# #create directories
+# ./module/install_project/directories.sh $PROJECT_NAME
+
+# ./module/install_project/files.sh "$DIRCTORY"

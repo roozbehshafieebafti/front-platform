@@ -1,6 +1,7 @@
 #!/bin/bash
 
 name="files"
+MAIN_DIRECTORY=$1
 
 failFunction (){
     if [ $1 == 0 ]
@@ -14,3 +15,5 @@ failFunction (){
 
 echo "***   start to create $name   ***";
 
+APIS=$MAIN_DIRECTORY"/module/install_project/dependencies/apis/fetch.ts"
+cat "$APIS">fetch.ts
