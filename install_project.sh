@@ -37,4 +37,4 @@ failFunction $? "files tests was successfull" "tests fail"
 # #create directories
 # ./module/install_project/directories.sh $PROJECT_NAME
 
-# ./module/install_project/files.sh "$DIRCTORY"
+./module/install_project/files.sh "$DIRCTORY" "$PROJECT_NAME"
