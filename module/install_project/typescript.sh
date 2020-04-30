@@ -2,6 +2,18 @@
 
 PROJECT_NAME=$1
 
+# utill function
+failFunction (){
+    if [ $1 == 0 ]
+    then 
+        echo "$2" #success
+    else
+        echo "$3"; #fail
+        exit 1;
+    fi
+}
+
+
 # check if the directory exists or not
 if [ ! -d "$PROJECT_NAME" ]
 then
@@ -10,10 +22,21 @@ then
     if [ $? != 0 ]
     then
         exit 1
-    else
-        exit 0
     fi
 else
     echo "directory exists"
-    exit 0
 fi
+
+
+cd "$PROJECT_NAME"
+failFunction $? "cd to $PROJECT_NAME" "can NOT cd to $PROJECT_NAME"
+
+# install other libraries
+yarn add react-router-dom @types/react-router-dom redux react-redux @types/react-redux redux-thunk redux-logger @types/redux-logger
+if [ $? != 0 ]
+then
+    exit 1
+fi
+
+cd ..
+exit 0
