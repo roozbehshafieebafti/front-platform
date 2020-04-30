@@ -8,6 +8,14 @@ else
     exit;
 fi
 
+if [ $2 ]
+then 
+    PLATFORM=$2
+else
+    #  linux platform
+    PLATFORM=-l
+fi
+
 # utills
 failFunction (){
     if [ $1 == 0 ]
@@ -26,7 +34,7 @@ DIRCTORY=`pwd`
 # run tests
 ./tests/install_project/fileExistance.sh "$DIRCTORY"
 failFunction $? "existance tests was successfull" "tests fail"
-./tests/install_project/dependencies.sh "$DIRCTORY"
+./tests/install_project/dependencies.sh "$DIRCTORY" "$PLATFORM"
 failFunction $? "dependencies tests was successfull" "tests fail"
 ./tests/install_project/files.sh "$DIRCTORY"
 failFunction $? "files tests was successfull" "tests fail"

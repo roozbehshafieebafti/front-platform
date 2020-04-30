@@ -1,11 +1,26 @@
 #!/bin/bash
 
 # internt connection
-ping -c 1 -q google.com >&/dev/null;
-if [ $? != 0 ]
+if [ $2 = "-l" ]
 then 
-    echo "you don't have internet conection"
-    exit 1
+    ping -c 1 -q google.com >&/dev/null;
+    if [ $? != 0 ]
+    then 
+        echo "you don't have internet conection, in linux operation system"
+        exit 1
+    fi
+else
+    if [ $2 = "-w" ]
+    then
+        ping google.com -n 1 >&/dev/null
+        if [ $? != 0 ]
+        then 
+            echo "you don't have internet conection, in windows operation system"
+            exit 1
+        fi
+    else
+        echo 'i cant test your internt connection, i hope it will be connect'
+    fi
 fi
 
 # node install

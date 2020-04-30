@@ -6,7 +6,7 @@ PROJECT_NAME=$1
 if [ ! -d "$PROJECT_NAME" ]
 then
     # create typescript project
-    #npx create-react-app $PROJECT_NAME --template typescript
+    npx create-react-app $PROJECT_NAME --template typescript
     if [ $? != 0 ]
     then
         exit 1
