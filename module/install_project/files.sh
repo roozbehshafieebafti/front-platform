@@ -60,3 +60,28 @@ failFunction $? "store.test.ts created" "store.test.ts can not creat"
 # create combine.test.ts
 cat "$COMBINE_TEST">"$MAIN_DIRECTORY/$PROJECT_NAME/src/redux/__tests__/combine.test.ts"
 failFunction $? "combine.test.ts created" "combine.test.ts can not creat"
+
+
+
+
+# root components and test files
+ROOT="$MAIN_DIRECTORY/module/install_project/dependencies/root/index.tsx"
+ROOT_TEST="$MAIN_DIRECTORY/module/install_project/dependencies/root/index.test.tsx"
+# create root dir
+if [ ! -d "$MAIN_DIRECTORY/$PROJECT_NAME/src/containers/root" ]
+then
+    mkdir "$MAIN_DIRECTORY/$PROJECT_NAME/src/containers/root"
+    failFunction $? "root dir created" "root dir can not creat"
+fi
+# create root index
+cat "$ROOT">"$MAIN_DIRECTORY/$PROJECT_NAME/src/containers/root/index.tsx"
+failFunction $? "root index.tsx created" "root index.tsx can not creat"
+# create __tests__ dir
+if [ ! -d "$MAIN_DIRECTORY/$PROJECT_NAME/src/containers/root/__tests__" ]
+then
+    mkdir "$MAIN_DIRECTORY/$PROJECT_NAME/src/containers/root/__tests__"
+    failFunction $? "root __tests__ dir created" "root __tests_ dir can not creat"
+fi
+# create index.test.tsx
+cat "$ROOT_TEST">"$MAIN_DIRECTORY/$PROJECT_NAME/src/containers/root/__tests__/index.test.tsx"
+failFunction $? "root index.test.tsx created" "root index.test.tsx can not creat"

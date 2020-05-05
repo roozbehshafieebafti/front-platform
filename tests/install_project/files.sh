@@ -49,4 +49,19 @@ then
 fi
 
 
+# test Root Component Files
+ROOT="$ROOT_DIRECTORY/module/install_project/dependencies/root/index.tsx"
+ROOT_TEST="$ROOT_DIRECTORY/module/install_project/dependencies/root/index.test.tsx"
+if [ ! -f "$ROOT" ]
+then
+    echo "ROOT index.tsx dose NOT exists"
+    exit 1
+fi
+
+if [ ! -f "$ROOT_TEST" ]
+then 
+    echo "Root index.test.ts dose NOT exists"
+    exit 1
+fi
+
 exit 0
