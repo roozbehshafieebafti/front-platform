@@ -4,8 +4,8 @@
 ### lets get started:
 befor each action, please be sure that all requirements are installed in your system
 
-⋅⋅* Node JS
-⋅⋅* yarn
-⋅⋅* Git bash - if you use Windows OS
+* Node JS
+* yarn
+* Git bash - if you use Windows OS
 
 
