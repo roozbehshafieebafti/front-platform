@@ -1,7 +1,11 @@
-<div dir="rtl">
-    <h1 dir="rtl"> سکو ساخت برنامه های کاربردی با زبان تایپ‌اسکریپت</h1>
-    این دستورات به شما کمک می‌کنند تا برنامه‌های کاربردی خود را در کمترین زمان ممکن و با انعطاف پذیری بالا ایجاد کنید
-</div>
----
+# Zaravand Front-end Application Platform
+**Whit this commands you are able to create your front end applictions easly and whit high level of flexibility**.
 
-نحوه استفاده:
+### lets get started:
+befor each action, please be sure that all requirements are installed in your system
+
+⋅⋅* Node JS
+⋅⋅* yarn
+⋅⋅* Git bash - if you use Windows OS
+
+
