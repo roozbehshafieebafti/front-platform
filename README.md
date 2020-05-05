@@ -9,12 +9,9 @@ before each action, please be sure that all requirements are installed in your s
 * Git bash - if you use Windows OS
 
 then please clone the repository :
+```git clone https://git.zaravand.com/roozbeh/front-platform.git```
 
-```    git clone https://git.zaravand.com/roozbeh/front-platform.git;
-```
-
-```cd front-platform/
-```
+```cd front-platform/```
 
 ###windows install
 open git bash and write this command:
