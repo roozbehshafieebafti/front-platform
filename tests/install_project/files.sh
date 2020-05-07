@@ -64,4 +64,20 @@ then
     exit 1
 fi
 
+# test Src Files
+SRC_INDEX="$ROOT_DIRECTORY/module/install_project/dependencies/src/index.tsx"
+SRC_ROUTER="$ROOT_DIRECTORY/module/install_project/dependencies/src/router.tsx"
+
+if [ ! -f "$SRC_INDEX" ]
+then
+    echo "SRC index.tsx dose NOT exists"
+    exit 1
+fi
+
+if [ ! -f "$SRC_ROUTER" ]
+then 
+    echo "SRC router.test.ts dose NOT exists"
+    exit 1
+fi
+
 exit 0

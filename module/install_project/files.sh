@@ -85,3 +85,26 @@ fi
 # create index.test.tsx
 cat "$ROOT_TEST">"$MAIN_DIRECTORY/$PROJECT_NAME/src/containers/root/__tests__/index.test.tsx"
 failFunction $? "root index.test.tsx created" "root index.test.tsx can not creat"
+
+
+# delete unnecessary files
+rm -f "$MAIN_DIRECTORY/$PROJECT_NAME/src/App.css";
+failFunction $? "App.css deleted" "App.css can not be deleted"
+rm -f "$MAIN_DIRECTORY/$PROJECT_NAME/src/App.test.tsx"
+failFunction $? "App.test.tsx deleted" "App.test.tsx can not be deleted"
+rm -f "$MAIN_DIRECTORY/$PROJECT_NAME/src/App.tsx"
+failFunction $? "App.tsx deleted" "App.tsx can not be deleted"
+rm -f "$MAIN_DIRECTORY/$PROJECT_NAME/src/index.css"
+failFunction $? "index.css deleted" "index.css can not be deleted"
+rm -f "$MAIN_DIRECTORY/$PROJECT_NAME/src/index.tsx"
+failFunction $? "index.tsx deleted" "index.tsx can not be deleted"
+rm -f "$MAIN_DIRECTORY/$PROJECT_NAME/src/logo.svg"
+failFunction $? "logo.svg deleted" "logo.svg can not be deleted"
+
+# ceate src files
+SRC_INDEX="$MAIN_DIRECTORY/module/install_project/dependencies/src/index.tsx"
+SRC_ROUTER="$MAIN_DIRECTORY/module/install_project/dependencies/src/router.tsx"
+cat "$SRC_INDEX">"$MAIN_DIRECTORY/$PROJECT_NAME/src/index.tsx"
+failFunction $? "SRC index.tsx created" "SRC index.tsx can not creat"
+cat "$SRC_ROUTER">"$MAIN_DIRECTORY/$PROJECT_NAME/src/router.tsx"
+failFunction $? "SRC router.tsx created" "SRC router.tsx can not creat"
