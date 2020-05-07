@@ -32,12 +32,16 @@ cd "$PROJECT_NAME"
 failFunction $? "cd to $PROJECT_NAME" "can NOT cd to $PROJECT_NAME"
 
 # install other libraries
-# yarn add react-router-dom @types/react-router-dom redux react-redux @types/react-redux redux-thunk redux-logger @types/redux-logger
-echo install
-if [ $? != 0 ]
+echo "Would you like to install dependencies? y/n"
+read Answer
+if [ $Answer = "y" ]
 then
-    exit 1
-fi
+    yarn add react-router-dom @types/react-router-dom redux react-redux @types/react-redux redux-thunk redux-logger @types/redux-logger
+    if [ $? != 0 ]
+    then
+        exit 1
+    fi
+fi    
 
 cd ..
 exit 0
