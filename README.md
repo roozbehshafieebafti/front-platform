@@ -1,8 +1,8 @@
 # Zaravand Front-end Application Platform
-**Whit this commands you are able to create your front end applictions easly and whit high level of flexibility**.
+**With this commands you are able to create your front-end applictions easly and with high level of flexibility**.
 
 ### lets get started:
-before each action, please be sure that all requirements are installed in your system
+before each action, please be sure all requirements are installed in your system
 
 * Node JS
 * yarn
