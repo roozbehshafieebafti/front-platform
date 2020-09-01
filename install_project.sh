@@ -1,10 +1,18 @@
 #!/bin/bash
 
+
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
+
 if [ $1 ]
 then
     PROJECT_NAME=$1
 else
-    echo "please choose name for project"
+    printf "please choose ${RED}NAME ${NC}for project \n"
     exit;
 fi
 
@@ -20,9 +28,9 @@ fi
 failFunction (){
     if [ $1 == 0 ]
     then 
-        echo "$2" #success
+        printf "$2" #success
     else
-        echo "$3"; #fail
+        printf "$3"; #fail
         exit 1;
     fi
 }
@@ -33,18 +41,18 @@ DIRCTORY=`pwd`
 
 # run tests
 ./tests/install_project/fileExistance.sh "$DIRCTORY"
-failFunction $? "existance tests was successfull" "tests fail"
+failFunction $? "${YELLOW}existance tests was ${GREEN}successfull${NC} \n" "${RED}tests fail${NC}\n"
 ./tests/install_project/dependencies.sh "$DIRCTORY" "$PLATFORM"
-failFunction $? "dependencies tests was successfull" "tests fail"
+failFunction $? "${YELLOW}dependencies tests was ${GREEN}successfull${NC} \n" "${RED}tests fail${NC}\n"
 ./tests/install_project/files.sh "$DIRCTORY"
-failFunction $? "files tests was successfull" "tests fail"
+failFunction $? "${YELLOW}files tests was ${GREEN}successfull${NC} \n" "${RED}tests fail${NC}\n"
 
 # install typescript
 ./module/install_project/typescript.sh $PROJECT_NAME
-failFunction $? "react typescript passed" "fail to install react typescript"
+failFunction $? "${GREEN}react typescript passed${NC} \n" "${RED}fail to install react typescript${NC} \n"
 # create directories
 ./module/install_project/directories.sh $PROJECT_NAME
-failFunction $? "successfully create directories" "fail to create directories"
+failFunction $? "${GREEN}successfully create directories${NC} \n" "${RED}fail to create directories${NC} \n"
 # create files
 ./module/install_project/files.sh "$DIRCTORY" "$PROJECT_NAME"
 failFunction $? "successfully create files" "fail to create files"

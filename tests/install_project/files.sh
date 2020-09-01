@@ -1,5 +1,11 @@
 #!/bin/bash
 
+RED='\033[0;31m'
+BLUE='\033[0;34m'
+YELLOW='\033[1;33m'
+GREEN='\033[0;32m'
+NC='\033[0m'
+
 ROOT_DIRECTORY=$1
 
 # fetch api
@@ -8,13 +14,13 @@ APIS_FILE_TEST="$ROOT_DIRECTORY/module/install_project/dependencies/apis/fetch.t
 
 if [ ! -f "$APIS_FILE" ]
 then
-    echo "fetch.ts dose NOT exists"
+    printf "${YELLOW}fetch.ts ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
-if [ ! -f "$APIS_FILE" ]
+if [ ! -f "$APIS_FILE_TEST" ]
 then 
-    echo "fetch.test.ts dose NOT exists"
+    printf "${YELLOW}fetch.test.ts ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
@@ -26,25 +32,25 @@ COMBINE_TEST="$ROOT_DIRECTORY/module/install_project/dependencies/redux/combine.
 
 if [ ! -f "$STORE" ]
 then
-    echo "store.ts dose NOT exists"
+    printf "${YELLOW}store.ts ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
 if [ ! -f "$STORE_TEST" ]
 then 
-    echo "store.test.ts dose NOT exists"
+    printf "${YELLOW}store.test.ts ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
 if [ ! -f "$COMBINE" ]
 then
-    echo "combine.ts dose NOT exists"
+    printf "${YELLOW}combine.ts ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
 if [ ! -f "$COMBINE_TEST" ]
 then 
-    echo "combine.test.ts dose NOT exists"
+    printf "${YELLOW}combine.test.ts ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
@@ -54,13 +60,13 @@ ROOT="$ROOT_DIRECTORY/module/install_project/dependencies/root/index.tsx"
 ROOT_TEST="$ROOT_DIRECTORY/module/install_project/dependencies/root/index.test.tsx"
 if [ ! -f "$ROOT" ]
 then
-    echo "ROOT index.tsx dose NOT exists"
+    printf "${YELLOW}ROOT index.tsx ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
 if [ ! -f "$ROOT_TEST" ]
 then 
-    echo "Root index.test.ts dose NOT exists"
+    printf "${YELLOW}Root index.test.ts ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
@@ -70,13 +76,13 @@ SRC_ROUTER="$ROOT_DIRECTORY/module/install_project/dependencies/src/router.tsx"
 
 if [ ! -f "$SRC_INDEX" ]
 then
-    echo "SRC index.tsx dose NOT exists"
+    printf "${YELLOW}SRC index.tsx ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
 if [ ! -f "$SRC_ROUTER" ]
 then 
-    echo "SRC router.test.ts dose NOT exists"
+    printf "${YELLOW}SRC router.test.ts ${RED}dose NOT exists${NC} \n"
     exit 1
 fi
 
