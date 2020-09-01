@@ -4,7 +4,7 @@ function Root() {
     return (
         <div id="root-main-div" style={styles}>
             <div>
-                <p>This is Zaravand Front-End Platform</p>
+                <p>This is Front Platform</p>
                 <p style={{fontSize: 16,textAlign: 'center'}}>Produced By: roozbeh shafiee bafti</p>
             </div>
         </div>

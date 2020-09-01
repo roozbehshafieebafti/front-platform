@@ -49,10 +49,13 @@ failFunction $? "${YELLOW}files tests was ${GREEN}successfull${NC} \n" "${RED}te
 
 # install typescript
 ./module/install_project/typescript.sh $PROJECT_NAME
-failFunction $? "${GREEN}react typescript passed${NC} \n" "${RED}fail to install react typescript${NC} \n"
+failFunction $? "\n${GREEN}react typescript passed${NC} \n\n" "${RED}fail to install react typescript${NC} \n"
 # create directories
 ./module/install_project/directories.sh $PROJECT_NAME
-failFunction $? "${GREEN}successfully create directories${NC} \n" "${RED}fail to create directories${NC} \n"
+failFunction $? "\n${GREEN}successfully create directories${NC} \n\n" "${RED}fail to create directories${NC} \n"
 # create files
 ./module/install_project/files.sh "$DIRCTORY" "$PROJECT_NAME"
-failFunction $? "successfully create files" "fail to create files"
+failFunction $? "\n" "${RED}fail to create files${NC} \n"
+
+printf "\n\t${GREEN}front platform is created succesfully\n"
+printf "\t${GREEN}we hope you enjoy use it\n\n"

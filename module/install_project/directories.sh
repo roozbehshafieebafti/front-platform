@@ -26,7 +26,7 @@ failFunction $? "${YELLOW}cd to $PROJECT_NAME ${NC} \n" "${RED}can not cd to $PR
 
 
 
-printf "${BLUE}start to create $name \n";
+printf "\n${BLUE}start to create $name \n";
 
 #----- create and cd src -----#
 if [ -d src ]
