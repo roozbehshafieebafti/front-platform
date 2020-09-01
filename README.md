@@ -1,4 +1,4 @@
-# Zaravand Front-end Application Platform
+# Front Platform
 **With this commands you are able to create your front-end applictions easly and with high level of flexibility**.
 
 ### lets get started:
