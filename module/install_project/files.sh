@@ -23,11 +23,15 @@ printf "\n${BLUE}start to create $name ${NC} \n";
 
 # fetch api files address
 APIS_FILE="$MAIN_DIRECTORY/module/install_project/dependencies/apis/fetch.ts"
+APIS_INTERFACE="$MAIN_DIRECTORY/module/install_project/dependencies/apis/fetch.interface.ts"
 APIS_FILE_TEST="$MAIN_DIRECTORY/module/install_project/dependencies/apis/fetch.test.ts"
 
 # creates fetch.ts
 cat "$APIS_FILE">"$MAIN_DIRECTORY/$PROJECT_NAME/src/apis/fetch.ts"
 failFunction $? "${YELLOW}fetch.ts ${GREEN}created${NC} \n" "${RED}fetch.ts can not creat${NC} \n"
+# creates fetch.interface.ts
+cat "$APIS_INTERFACE">"$MAIN_DIRECTORY/$PROJECT_NAME/src/apis/fetch.interface.ts"
+failFunction $? "${YELLOW}fetch.interface.ts ${GREEN}created${NC} \n" "${RED}fetch.interface.ts can not creat${NC} \n"
 # create __tests__ dir
 if [ ! -d "$MAIN_DIRECTORY/$PROJECT_NAME/src/apis/__tests__" ]
 then

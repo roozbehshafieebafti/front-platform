@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Root() {
+const Root:React.FC = () =>{
     return (
         <div id="root-main-div" style={styles}>
             <div>
