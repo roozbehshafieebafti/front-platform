@@ -41,8 +41,8 @@ describe('Fetch Test',()=>{
         expect(FetchMock).toBeCalledWith(url,meta); // arguments test
         expect(result.status).not.toBe(null); // result test
         expect(result.status).toBe(200); // result test
-        expect(result.data).not.toBe(null); // result test
-        expect(result.data).toEqual({name: "roozbeh",family: "shafiee"}); // result test
+        expect(result.body).not.toBe(null); // result test
+        expect(result.body).toEqual({name: "roozbeh",family: "shafiee"}); // result test
     });
 
     test('functional test - error type', async()=>{
@@ -75,7 +75,7 @@ describe('Fetch Test',()=>{
         expect(FetchMock).toBeCalledWith(url,meta); // arguments test
         expect(result.status).not.toBe(null); // result test
         expect(result.status).toBe(0); // result test
-        expect(result.data).not.toBe(null); // result test
-        expect(result.data).toEqual('fail to fetch address'); // result test
+        expect(result.body).not.toBe(null); // result test
+        expect(result.body).toEqual('fail to fetch address'); // result test
     })
 });

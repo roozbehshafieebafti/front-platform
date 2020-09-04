@@ -1,8 +1,8 @@
 /** INTERFACE for Fetch result */
-export interface FetchResult{
-    status: number;
-    data: object | string;
-}
+import { FetchResult, HeadersInterface } from './fetch.interface';
+
+
+
 
 /**
  * Fetch function performs XMLHttpRequest 
@@ -11,27 +11,36 @@ export interface FetchResult{
  * @param {function} Call -> {SHOULD NOT ENTERED} fetch funtion
  * @param {string} env -> {SHOULD NOT ENTERED} APPLICATION envirment
  */
-export async function Fetch (url:string, metaData:object, Call:any=fetch, env: string = process.env.NODE_ENV):Promise<FetchResult>{
+export async function Fetch (url:string, metaData:HeadersInterface, Call:any=fetch, env: string = process.env.NODE_ENV):Promise<FetchResult>{
     
     // define fail result object
     let failResult: FetchResult = {
         status: 0,
-        data: 'fail to fetch address'
+        body: 'fail to fetch address'
     };
 
     try{
-        let response = await Call(url,metaData); // call api
-        let Json = await response.json(); // transform it to json 
-        
-        // in production should not log the respponse
+        let response = await Call(url,metaData); // call api        
+        let result = await response.json();
+        let headers={};
+        // show result in test and development mode
         if(env !== 'production'){
-            console.log('resposne',Json);
+            console.log('resposne-result',result);
         }
-        
-        // 
+        if(response.headers && response.headers.entries && response.headers.entries().next){
+            headers = response.headers.entries().next()
+        }
+
+        // result
         return {
             status: response.status,
-            data : Json
+            body: result,
+            ok: response.ok,
+            redirected: response.redirected,
+            statusText: response.statusText,
+            type: response.type,
+            url: url,
+            headers
         }
     }
     catch(error){

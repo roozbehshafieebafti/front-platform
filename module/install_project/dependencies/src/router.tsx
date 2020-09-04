@@ -11,7 +11,7 @@ import Root from './containers/root';
 function Router() {
     return (
         <BrowserRouter>
-            <Route path="/" exact render={Root}/>
+            <Route path="/" exact component={Root}/>
         </BrowserRouter>
     );
 }
